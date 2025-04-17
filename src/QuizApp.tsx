@@ -15,10 +15,13 @@ const QuizApp = () => {
   }, []);
 
   const calculateIQ = (seconds: number): number => {
-    const baseIQ = 200;
-    const decay = Math.log(seconds + 1) * 25;
-    return Math.round(Math.max(60, baseIQ - decay));
+    const min = 100;
+    const max = 180;
+    const k = 0.01155; // 平均120秒でIQ120になるよう調整
+    const iq = min + (max - min) * Math.exp(-k * seconds);
+    return Math.round(iq);
   };
+
 
   const handleCorrect = () => {
     const now = Date.now();
