@@ -38,7 +38,7 @@ const QuizApp = () => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-black p-4">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-black py-8 px-4">
       <h1 className="text-3xl font-bold text-center mb-4 text-rose-600">
         練習問題
       </h1>
